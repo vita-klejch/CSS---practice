@@ -1,0 +1,156 @@
+:root {
+  --primary-text-blue: hsl(238, 29%, 16%);
+  --primary-text-red: hsl(14, 88%, 65%);
+
+  --gradient-violet: hsl(273, 75%, 66%);
+  --gradient-blue: hsl(240, 73%, 65%);
+
+  --neutral-text-blue: hsl(237, 12%, 33%);
+  --neutral-text-blue2: hsl(240, 6%, 50%);
+
+  --divider: hsl(240, 5%, 91%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+}
+body {
+  background: rgb(101, 101, 231);
+  background: linear-gradient(
+    0deg,
+    var(--gradient-blue) 16%,
+    var(--gradient-violet) 71%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.faq {
+  background-color: white;
+  max-width: 325px;
+  margin: 10rem auto 1rem auto;
+  padding: 0 2rem 2rem 2rem;
+  border-radius: 2rem;
+  position: relative;
+}
+
+.main-img {
+  background: url(images/illustration-woman-online-mobile.svg) no-repeat;
+  width: 210px;
+  height: 160px;
+  position: absolute;
+  transform: translate(15%, -60%);
+}
+.main-img::before {
+  background: url(images/bg-pattern-mobile.svg) no-repeat;
+  background-size: 210px auto;
+  content: "";
+  width: 210px;
+  height: 100px;
+  position: absolute;
+  top: 0px;
+  transform: translate(0, 90%);
+}
+
+.questions-box {
+  padding-top: 8rem;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primary-text-blue);
+  margin-bottom: 1rem;
+}
+
+.info-box {
+  border-bottom: 1px solid var(--divider);
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--neutral-text-blue);
+  z-index: 100;
+  cursor: grab;
+}
+
+.answer {
+  display: none;
+}
+
+.chevron {
+  transform: rotate(0deg);
+  transition: all 0.5s;
+}
+
+.question:hover {
+  color: var(--primary-text-red);
+}
+.active .question {
+  font-weight: 700;
+  color: var(--primary-text-blue);
+  margin-bottom: 1rem;
+}
+.active .answer {
+  display: block;
+  color: var(--neutral-text-blue2);
+
+  animation: slide-down 1s ease-out;
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.active .chevron {
+  transform: rotate(180deg);
+}
+
+@media only screen and (min-width: 900px) {
+  .faq {
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    background: url(images/illustration-woman-online-desktop.svg) top 2rem left -7rem
+        no-repeat,
+      url(images/bg-pattern-desktop.svg) top -25rem left -48rem no-repeat;
+    background-color: white;
+  }
+  .hop-box {
+    background: url(images/illustration-box-desktop.svg) no-repeat;
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 110px;
+    top: 14rem;
+    left: -9rem;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes floating {
+    from {
+      transform: translate(0, 0px);
+    }
+    65% {
+      transform: translate(10px, 0px);
+    }
+    to {
+      transform: translate(0, -0px);
+    }
+  }
+  .main-img {
+    display: none;
+  }
+  .questions-box {
+    margin: 3rem 2rem;
+    width: 40%;
+  }
+}
