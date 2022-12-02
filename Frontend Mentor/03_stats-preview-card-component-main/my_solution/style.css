@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+:root {
+  --primary-main-bg: hsl(233, 47%, 7%);
+  --primary-card-bg: hsl(244, 38%, 16%);
+  --primary-accent: rgb(170, 92, 219);
+
+  --neutral-white: hsl(0, 0%, 100%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --transparent-white2: hsla(0, 0%, 100%, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  /* font-family: "Lexend Deca", sans-serif; */
+}
+
+body {
+  background-color: var(--primary-main-bg);
+  color: var(--neutral-white);
+}
+
+section {
+  background-color: var(--primary-card-bg);
+  width: 375px;
+  margin: 5rem auto 1rem auto;
+  border-radius: 1rem;
+}
+.main-img {
+  width: 100%;
+  background: url(images/image-header-mobile.jpg) no-repeat,
+    var(--primary-accent);
+  background-blend-mode: multiply;
+  background-position: center center;
+  background-size: cover;
+  background-size: 100%;
+  height: 275px;
+  position: relative;
+  filter: blur(1px);
+  border-radius: 1rem 1rem 0 0;
+}
+.main {
+  padding: 2.5rem;
+  text-align: center;
+}
+.main h1,
+.main h1 span {
+  font-size: 2rem;
+}
+.main h1 span {
+  color: var(--primary-accent);
+}
+
+.main p {
+  color: var(--transparent-white);
+  line-height: 2rem;
+  padding: 2rem 0 1rem 0;
+  font-family: "Lexend Deca", sans-serif;
+}
+.stats-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.stats-group .stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+.stats-group .stat-text {
+  color: var(--transparent-white2);
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1000px) {
+  section {
+    display: flex;
+    width: 900px;
+    margin: 5rem auto 1rem auto;
+    flex-direction: row-reverse;
+  }
+  .stats-group {
+    flex-direction: row;
+  }
+  .main {
+    padding: 4rem;
+    text-align: left;
+    width: 50%;
+  }
+  .main-img {
+    width: 100%;
+    background: url(images/image-header-desktop.jpg) no-repeat,
+      var(--primary-accent);
+    background-size: cover;
+
+    height: auto;
+    width: 50%;
+    border-radius: 0 1rem 1rem 0;
+  }
+}
