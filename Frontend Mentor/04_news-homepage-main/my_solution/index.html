@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | News homepage</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="fix-nav">
+        <nav>
+          <div class="logo"></div>
+          <input id="toggle" type="checkbox"></input>
+          <label for="toggle" class="burger-menu">
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+            <div class="burger-line"></div>
+          </label>
+          <ul class="nav-list">
+            <li>Home</li>
+            <li>New</li>
+            <li>Popular</li>
+            <li>Trending</li>
+            <li>Categories</li>
+          </ul>
+          <div class="overlay"></div>
+
+        </nav>
+      </div>
+      <div class="main-grid">
+
+      
+      <section class="main-article">
+        <div class="main-article-img"></div>
+        <div class="main-article-text">
+          <h1>The Bright Future of Web 3.0?</h1>
+          <div class="main-article-box">
+
+          <p>
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+          <div>
+            <button>Read more</button>
+          </div>
+          </div>
+        </div>
+      </section>
+      <section class="side">
+        <h1>New</h1>
+        <div class="side-article">
+          <h2>Hydrogen VS Electric Cars</h2>
+          Will hydrogen-fueled cars ever catch up to EVs?
+        </div>
+        <div class="side-article">
+          <h2>The Downsides of AI Artistry</h2>
+          What are the possible adverse effects of on-demand AI image
+          generation?
+        </div>
+        <div class="side-article">
+          <h2>Is VC Funding Drying Up?</h2>
+          Private funding by VC firms is down 50% YOY. We take a look at what
+          that means.
+        </div>
+      </section>
+      <section class="articles">
+        <article>
+          <div class="article-img">
+            <img src="assets/images/image-retro-pcs.jpg" alt="Retro PC" />
+          </div>
+          <div class="article-flex-texts">
+            <div class="article-number">01</div>
+            <div class="article-title">Reviving Retro PCs</div>
+            <div class="article-text">
+              What happens when old PCs are given modern upgrades?
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="article-img">
+            <img src="assets/images/image-top-laptops.jpg" alt="Top laptops" />
+          </div>
+          <div class="article-flex-texts">
+            <div class="article-number">02</div>
+            <div class="article-title">Top 10 Laptops of 2022</div>
+            <div class="article-text">
+              Our best picks for various needs and budgets.
+            </div>
+          </div>
+        </article>
+        <article>
+          <div class="article-img">
+            <img
+              src="assets/images/image-gaming-growth.jpg"
+              alt="Gaming control"
+            />
+          </div>
+          <div class="article-flex-texts">
+            <div class="article-number">03</div>
+            <div class="article-title">The Growth of Gaming</div>
+            <div class="article-text">
+              How the pandemic has sparked fresh opportunities.
+            </div>
+          </div>
+        </article>
+      </section>
+      </div>
+    </div>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Vita Klejch</a>.
+      </div>
+  </body>
+</html>
