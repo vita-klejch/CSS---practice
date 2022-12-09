@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Tip calculator app</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="root">
+      <h1 class="headline">Spli<br />tter</h1>
+      <div class="bill-splitter">
+        <main>
+          <div class="errorBox">
+            <span class="">Bill</span>
+          </div>
+          <div class="input-container">
+            <!-- <img class="input-icon" src="images/icon-dollar.svg"></img> -->
+            <input
+              class="icon-dollar"
+              type="text"
+              placeholder="0"
+              name="psw"
+              id="bill"
+            />
+          </div>
+          <!-- <input type="number" name="" id="" /> -->
+          <h3>Select Tip %</h3>
+          <div class="tip-selections">
+            <div class="selection" data-tip="5">5%</div>
+            <div class="selection" data-tip="10">10%</div>
+            <div class="selection" data-tip="15">15%</div>
+            <div class="selection" data-tip="25">25%</div>
+            <div class="selection" data-tip="50">50%</div>
+            <input
+              class="selection"
+              data-tip="custom"
+              id="customTip"
+              type="text"
+              placeholder="Custom"
+            />
+          </div>
+
+          <div class="errorBox">
+            <span class="">Number of People</span>
+            <span class="errorMsg" id="errorNumber">Can't be a zero.</span>
+          </div>
+
+          <div class="input-container">
+            <!-- <img class="input-icon" src="images/icon-person.svg"></img> -->
+            <input
+              class="icon-person"
+              type="text"
+              placeholder="1"
+              value="1"
+              name="psw"
+              id="numberOfPeople"
+            />
+          </div>
+        </main>
+
+        <div class="calculator">
+          <div>
+            <div class="calc-box">
+              <div class="calc-text">
+                <h3>Tip Amount</h3>
+                / person
+              </div>
+              <div class="calc-number" id="tipPerPerson">$0.00</div>
+            </div>
+
+            <div class="calc-box">
+              <div class="calc-text">
+                <h3>Total</h3>
+                / person
+              </div>
+              <div class="calc-number" id="totalPerPerson">$0.00</div>
+            </div>
+          </div>
+          <button>Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Vita Klejch</a>.
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
