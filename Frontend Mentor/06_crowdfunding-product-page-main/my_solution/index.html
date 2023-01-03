@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Crowdfunding product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="root hero-image">
+      <div class="container">
+        <header class="flex-between header-container">
+          <div class="header-logo"></div>
+          <nav>
+            <input id="toggle" type="checkbox" />
+            <label for="toggle" class="burger-menu"> </label>
+            <div class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">About</li>
+                <li class="nav__item">Discover</li>
+                <li class="nav__item">Get Started</li>
+              </ul>
+            </div>
+            <div class="overlay"></div>
+            <div class="nav-desktop">
+              <ul class="nav-desktop__list">
+                <li class="nav-desktop__item">About</li>
+                <li class="nav-desktop__item">Discover</li>
+                <li class="nav-desktop__item">Get Started</li>
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <article class="article mb-2 py-2 logo logo__container">
+          <div class="logo__icon"></div>
+          <div class="article__h1 pb-1 mt-1">
+            Mastercraft Bamboo Monitor Riser
+          </div>
+          <div class="article__text article__text--center">
+            A beautiful & handcrafted monitor stand to reduce neck and eye
+            strain.
+          </div>
+          <div class="flex-between l-flex-align-center">
+            <!-- <div> -->
+            <button class="btn btn--primary js-modal-opener">
+              Back this project
+            </button>
+            <div class="js-bookmark-toggle">
+              <button class="bookmark">
+                <svg
+                  class="bookmark__svg"
+                  width="56"
+                  height="56"
+                  viewBox="0 0 56 56"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g fill="none" fill-rule="evenodd">
+                    <circle
+                      class="bookmark_svg-circle"
+                      cx="28"
+                      cy="28"
+                      r="28"
+                    />
+                    <path
+                      class="bookmark_svg-middle"
+                      d="M23 19v18l5-5.058L33 37V19z"
+                    />
+                  </g>
+                </svg>
+                <div class="bookmark__title"></div>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="article pb-2 mb-1">
+          <div class="info-box__flex-wrapper">
+            <div class="info-box info-box--column">
+              <div class="info-box__item info-box__item--big">$89,914</div>
+              <div class="info-box__item">of $100,000 backed</div>
+            </div>
+            <div class="info-box__divider"></div>
+            <div class="info-box info-box--column">
+              <div class="info-box__item info-box__item--big">5,007</div>
+              <div class="info-box__item">total backers</div>
+            </div>
+            <div class="info-box__divider"></div>
+            <div class="info-box info-box--column">
+              <div class="info-box__item info-box__item--big">56</div>
+              <div class="info-box__item">days left</div>
+            </div>
+          </div>
+          <div class="progress-bar mt-1">
+            <div class="progress-bar--filled"></div>
+          </div>
+        </article>
+
+        <article class="article py-2">
+          <div class="article__h2 pb-1">About this project</div>
+          <div class="article__text">
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+          </div>
+          <div class="article__text">
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </div>
+
+          <article class="article mb-1">
+            <div class="l-desktop-flex-between">
+              <div class="article__h3">Bamboo Stand</div>
+              <div class="article__h3 article__h3--primary pb-1">
+                Pledge $25 or more
+              </div>
+            </div>
+            <div class="article__text">
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </div>
+            <div class="l-desktop-flex-between">
+              <div class="info-box">
+                <div class="info-box__item info-box__item--big">101</div>
+                <div class="info-box__item">left</div>
+              </div>
+              <button
+                class="btn btn--primary js-modal-opener"
+                data-modal="modal-bamboo"
+              >
+                Select Reward
+              </button>
+            </div>
+          </article>
+
+          <article class="article mb-1">
+            <div class="l-desktop-flex-between">
+              <div class="article__h3">Black Edition Stand</div>
+              <div class="article__h3 article__h3--primary pb-1">
+                Pledge $75 or more
+              </div>
+            </div>
+            <div class="article__text">
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </div>
+            <div class="l-desktop-flex-between">
+              <div class="info-box">
+                <div class="info-box__item info-box__item--big">64</div>
+                <div class="info-box__item">left</div>
+              </div>
+              <button
+                class="btn btn--primary js-modal-opener"
+                data-modal="modal-black"
+              >
+                Select Reward
+              </button>
+            </div>
+          </article>
+
+          <article class="article article--is-disabled">
+            <div class="l-desktop-flex-between">
+              <div class="article__h3">Mahogany Special Edition</div>
+              <div class="article__h3 article__h3--primary pb-1">
+                Pledge $200 or more
+              </div>
+            </div>
+            <div class="article__text">
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and
+              a personal thank you. You’ll be added to our Backer member list.
+              Shipping is included.
+            </div>
+            <div class="l-desktop-flex-between">
+              <div class="info-box">
+                <div class="info-box__item info-box__item--big">0</div>
+                <div class="info-box__item">left</div>
+              </div>
+              <button disabled class="btn btn--disabled">Out of Stock</button>
+            </div>
+          </article>
+        </article>
+
+        <!-- Selection modal start -->
+        <div class="modal modal--hidden" id="modal-selection-block">
+          <div class="modal__content">
+            <div class="article mb-2 mt-2">
+              <div class="article__header flex-between mb-1 mt-1">
+                <div class="article__h2">Back this project</div>
+                <div class="modal__close-icon" id="js-modal-select-close"></div>
+              </div>
+              <div class="article__text">
+                Want to support us in bringing Mastercraft Bamboo Monitor Riser
+                out in the world?
+              </div>
+
+              <label for="modal-no-reward" class="label js-modal-option">
+                <article class="article mb-1" id="js-outline-no-reward">
+                  <div class="modal__header-container">
+                    <input
+                      type="radio"
+                      name="modal-option"
+                      id="modal-no-reward"
+                      class="radio"
+                      data-outline-target-id="js-outline-no-reward"
+                    />
+                    <div>
+                      <div class="article__h3 article__h3--hover-effect">
+                        Pledge with no reward
+                      </div>
+                    </div>
+                  </div>
+                  <div class="article__text">
+                    Choose to support us without a reward if you simply believe
+                    in our project. As a backer, you will be signed up to
+                    receive product updates via email.
+                  </div>
+                </article>
+              </label>
+
+              <label for="modal-bamboo" class="label js-modal-option">
+                <article class="article mb-1" id="js-outline-bamboo">
+                  <div class="modal__header-container">
+                    <input
+                      type="radio"
+                      name="modal-option"
+                      id="modal-bamboo"
+                      class="radio"
+                      data-outline-target-id="js-outline-bamboo"
+                    />
+                    <div class="article-headline l-desktop-flex">
+                      <div class="article__h3 article__h3--hover-effect">
+                        Bamboo Stand
+                      </div>
+                      <div class="article__h3 article__h3--primary">
+                        Pledge $25 or more
+                      </div>
+                    </div>
+                  </div>
+                  <div class="article__text">
+                    You get an ergonomic stand made of natural bamboo. You've
+                    helped us launch our promotional campaign, and you’ll be
+                    added to a special Backer member list.
+                  </div>
+                  <div class="info-box info-box--modal-corner">
+                    <div class="info-box__item info-box__item--big">101</div>
+                    <div class="info-box__item">left</div>
+                  </div>
+                  <!-- Selected pledge start -->
+                  <div class="label__element label__element-hidden">
+                    <div
+                      class="l-desktop-flex-between l-desktop-align-baseline"
+                    >
+                      <div class="article__text article__text--center">
+                        Enter your pledge
+                      </div>
+                      <div class="flex-between l-desktop-gap">
+                        <div class="input input--border">
+                          <span class="input__icon">$</span>
+                          <input
+                            class="input__text"
+                            type="text"
+                            placeholder="25"
+                          />
+                        </div>
+                        <button class="btn btn--primary js-modal-continue">
+                          Continue
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Selected pledge end -->
+                </article>
+              </label>
+
+              <label for="modal-black" class="label js-modal-option">
+                <article class="article mb-1" id="js-outline-black">
+                  <div class="modal__header-container">
+                    <input
+                      type="radio"
+                      name="modal-option"
+                      id="modal-black"
+                      class="radio"
+                      data-outline-target-id="js-outline-black"
+                    />
+                    <div class="article-headline l-desktop-flex">
+                      <div class="article__h3 article__h3--hover-effect">
+                        Black Edition Stand
+                      </div>
+                      <div class="article__h3 article__h3--primary">
+                        Pledge $75 or more
+                      </div>
+                    </div>
+                  </div>
+                  <div class="article__text">
+                    You get a Black Special Edition computer stand and a
+                    personal thank you. You’ll be added to our Backer member
+                    list. Shipping is included.
+                  </div>
+                  <div class="info-box info-box--modal-corner">
+                    <div class="info-box__item info-box__item--big">64</div>
+                    <div class="info-box__item">left</div>
+                  </div>
+
+                  <!-- Selected pledge start -->
+                  <div class="label__element label__element-hidden">
+                    <div
+                      class="l-desktop-flex-between l-desktop-align-baseline"
+                    >
+                      <div class="article__text article__text--center">
+                        Enter your pledge
+                      </div>
+                      <div class="flex-between l-desktop-gap">
+                        <div class="input input--border">
+                          <span class="input__icon">$</span>
+                          <input
+                            class="input__text"
+                            type="text"
+                            placeholder="75"
+                          />
+                        </div>
+                        <button class="btn btn--primary js-modal-continue">
+                          Continue
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Selected pledge end -->
+                </article>
+              </label>
+
+              <label
+                for="modal-mahagony"
+                class="label js-modal-option label--is-disabled"
+              >
+                <article class="article" id="js-outline-mahagony">
+                  <div class="modal__header-container">
+                    <input
+                      type="radio"
+                      name="modal-option"
+                      id="modal-mahagony"
+                      disabled
+                      class="radio"
+                      data-outline-target-id="js-outline-mahagony"
+                    />
+                    <div class="article-headline l-desktop-flex">
+                      <div class="article__h3 article__h3--hover-effect">
+                        Mahogany Special Edition
+                      </div>
+                      <div class="article__h3 article__h3--primary">
+                        Pledge $200 or more
+                      </div>
+                    </div>
+                  </div>
+                  <div class="article__text">
+                    You get two Special Edition Mahogany stands, a Backer
+                    T-Shirt, and a personal thank you. You’ll be added to our
+                    Backer member list. Shipping is included.
+                  </div>
+                  <div class="info-box info-box--modal-corner">
+                    <div class="info-box__item info-box__item--big">0</div>
+                    <div class="info-box__item">left</div>
+                  </div>
+
+                  <!-- Selected pledge  start -->
+                  <div class="label__element label__element-hidden">
+                    <div class="article__text article__text--center">
+                      Enter your pledge
+                    </div>
+                    <div class="flex-between">
+                      <div class="input input--border">
+                        <span class="input__icon">$</span>
+                        <input
+                          class="input__text"
+                          type="text"
+                          placeholder="200"
+                        />
+                      </div>
+                      <button class="btn btn--primary js-modal-continue">
+                        Continue
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Selected pledge end -->
+                </article>
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- Selection modal end -->
+
+        <!-- Success modal start -->
+        <!-- <div class="modal modal--hidden mt-2 mb-2" id="modal-thanks"> -->
+        <div class="modal modal--hidden mb-2" id="modal-thanks">
+          <div class="modal__content mt-2">
+            <article class="article">
+              <div class="article__check-icon"></div>
+              <div class="article__h1 mt-2 mb-2">Thanks for your support!</div>
+              <div class="article__text article__text--center">
+                Your pledge brings us one step closer to sharing Mastercraft
+                Bamboo Monitor Riser worldwide. You will get an email once our
+                campaign is completed.
+              </div>
+              <div>
+                <button
+                  class="btn btn--primary btn-center mb-2"
+                  id="close-thanks-modal"
+                >
+                  Got it!
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+        <!-- Success modal end -->
+      </div>
+    </div>
+    <div id="overlay" onclick="off()"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
