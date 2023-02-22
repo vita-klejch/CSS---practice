@@ -1,0 +1,267 @@
+// - Mobile: 375px
+// - Desktop: 1440px
+@use "breakpoints" as bp;
+
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&display=swap");
+
+// VARIABLES
+//   - COLORS
+$color-primary: hsl(180, 29%, 50%);
+$color-background: hsl(180, 52%, 96%);
+$color-filter: hsl(180, 31%, 95%);
+$color-grayish: hsl(180, 8%, 52%);
+$color-dark: hsl(180, 14%, 20%);
+
+//   - OTHER
+$font-size: 15px;
+$font-family: "League Spartan", sans-serif;
+$border-radius: 5px;
+$content-width: 800px;
+
+// MIXIN
+
+@mixin cardStyle {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 1px 6px 26px -3px rgba(91, 164, 164, 0.75);
+  -webkit-box-shadow: 1px 6px 26px -3px rgba(91, 164, 164, 0.75);
+  -moz-box-shadow: 1px 6px 26px -3px rgba(91, 164, 164, 0.75);
+}
+@mixin bubbleStyle {
+  text-transform: uppercase;
+  padding: 5px 5px 4px 5px;
+  border-radius: 10px;
+  margin-left: 5px;
+  font-size: 12px;
+}
+@mixin tagStyle {
+  color: $color-primary;
+  background-color: $color-background;
+  font-weight: 700;
+  padding: 3px 5px;
+  padding-top: 0.3rem;
+  border-radius: 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $color-dark;
+  background-color: $color-background;
+}
+
+.cards-container {
+  margin: 3rem auto;
+  @include bp.tablet {
+    margin-top: 1.5rem;
+  }
+}
+.general-wrapper {
+  position: relative;
+  max-width: $content-width;
+  margin: 0 auto;
+}
+.main-content {
+  background-color: $color-primary;
+  background-image: url("images/bg-header-desktop.svg");
+  height: 156px;
+  padding-top: 7rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@keyframes append-animate {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+// INFO-BOX COMPONENT
+.info-box {
+  @include cardStyle;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  padding: 1.5rem;
+  margin: 0 auto;
+  margin-top: -1rem;
+  max-width: $content-width;
+  transition: transform 1s ease-out, opacity 0.2s ease-in 0.4s;
+  opacity: 1;
+  transform: translateY(0);
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  &__item {
+    display: flex;
+    animation: append-animate 0.25s linear;
+  }
+  &--hidden {
+    transition: transform 0.8s ease-out, opacity 0.3s ease-in;
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  &__item-text {
+    @include tagStyle;
+    border-radius: 5px 0 0 5px;
+  }
+  &__item-icon {
+    background: url("images/icon-remove.svg") no-repeat $color-primary center;
+    border-radius: 0 5px 5px 0;
+    align-self: center;
+    height: 26px;
+    width: 26px;
+    padding: 3px 4px;
+    cursor: pointer;
+  }
+  &__item-icon:hover {
+    background-color: $color-dark;
+  }
+  &__clear-btn {
+    color: $color-grayish;
+    padding: 4px 0;
+    cursor: pointer;
+    align-self: center;
+    &:hover {
+      color: $color-primary;
+      text-decoration: underline;
+    }
+  }
+}
+
+// CARD COMPONENT
+.card {
+  @include cardStyle;
+  margin-bottom: 3.5rem;
+
+  @include bp.tablet {
+    margin-bottom: 1.5rem;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    @include bp.tablet {
+      padding-top: 0;
+      height: 75px;
+      flex-direction: row;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    border: none;
+    height: 60px;
+    top: -55px;
+    @include bp.tablet {
+      position: static;
+      height: auto;
+    }
+  }
+  &__logo-img {
+    height: 100%;
+  }
+  &__main-info {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: space-between;
+    flex-direction: column;
+    border-bottom: 2px solid $color-grayish;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    @include bp.tablet {
+      gap: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+  &__header {
+    color: $color-primary;
+    font-weight: 700;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  &__header--bubble {
+    @include bubbleStyle;
+    color: $color-background;
+    background-color: $color-primary;
+    margin-left: 1rem;
+  }
+  &__header--bubble-black {
+    @include bubbleStyle;
+    color: $color-background;
+    background-color: $color-dark;
+  }
+  &__headline {
+    color: $color-dark;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+    }
+    @include bp.tablet {
+      font-size: 1.2rem;
+    }
+  }
+  &--featured {
+    border-left: 4px solid $color-primary;
+  }
+
+  &__job-comments {
+    color: $color-grayish;
+    display: flex;
+  }
+  &__single-comment::after {
+    content: "•";
+    padding: 0 0.5rem;
+  }
+  &__single-comment:last-child::after {
+    content: "";
+  }
+
+  &__tags-area {
+    align-self: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-right: auto;
+    @include bp.tablet {
+      margin-left: auto;
+      margin-right: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  &__tag {
+    @include tagStyle;
+    cursor: pointer;
+    &:hover {
+      color: $color-background;
+      background-color: $color-primary;
+    }
+  }
+}
+
+.old_content {
+  display: none;
+}

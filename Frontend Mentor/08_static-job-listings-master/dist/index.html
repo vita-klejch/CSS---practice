@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Job Listings</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="main-content">
+      <!-- animated box to display selected filters -->
+      <div class="general-wrapper">
+        <div class="info-box info-box--hidden">
+          <div class="info-box__container js-info-box"></div>
+          <div class="info-box__clear-btn js-info-box-clear">Clear</div>
+        </div>
+      </div>
+
+      <!-- jobs cards displays here-->
+      <div class="general-wrapper">
+        <div class="cards-container js-root"></div>
+      </div>
+
+      <script src="script.js"></script>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Vita Klejch</a>.
+      </div>
+    </div>
+  </body>
+</html>
