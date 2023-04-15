@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <!-- <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    /> -->
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | REST Countries API</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="general-container">
+        <div class="header__container">
+          <div class="header__title">Where in the world?</div>
+          <div class="flex">
+            <div class="header__icon"></div>
+            <div class="header__mode-toggle js-mode-toggle">Dark Mode</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="general-container">
+      <div class="js-main-content">
+        <nav class="nav">
+          <div class="search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="search__icon"
+            >
+              <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+              <path
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"
+              />
+            </svg>
+            <form action="">
+              <input
+                class="search__input js-search-input"
+                type="text"
+                name=""
+                id=""
+                placeholder="Search for a country..."
+              />
+            </form>
+          </div>
+          <div class="filter">
+            <div class="filter__trigger js-filter-trigger">
+              <div class="filter_trigger-content">Filter by region</div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="filter__icon"
+              >
+                <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"
+                />
+              </svg>
+            </div>
+            <ul class="filter__list">
+              <li class="filter__list-item" data-filter-type="no-filter">
+                No filter
+              </li>
+              <li class="filter__list-item" data-filter-type="Africa">
+                Africa
+              </li>
+              <li class="filter__list-item" data-filter-type="Americas">
+                America
+              </li>
+              <li class="filter__list-item" data-filter-type="Asia">Asia</li>
+              <li class="filter__list-item" data-filter-type="Europe">
+                Europe
+              </li>
+              <li class="filter__list-item" data-filter-type="Oceania">
+                Oceania
+              </li>
+              <li class="filter__list-item" data-filter-type="Polar">Polar</li>
+            </ul>
+          </div>
+        </nav>
+        <div class="card__group js-cards-group"></div>
+      </div>
+
+      <!-- CARD with detail info starts HERE -->
+      <div class="js-detail-content hidden-content">
+        <div class="nav">
+          <div class="nav__back-btn-container">
+            <button class="nav__back-btn js-back-btn">Back</button>
+          </div>
+        </div>
+        <div class="detail js-detail-display">
+          <img src="img/ax.svg" class="detail__img" />
+          <div class="detail__content">
+            <div class="detail__title">Country name</div>
+            <div class="detail__atribute-container">
+              <div class="detail__atribute-group">
+                <div class="detail__atribute">
+                  <span class="detail--strong">Native Name: </span>85 321 465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Population: </span>85 321 465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Region: </span>85 321 465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Sub Region: </span>85 321 465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Capital: </span>85 321 465
+                </div>
+              </div>
+              <div class="detail__atribute-group">
+                <div class="detail__atribute">
+                  <span class="detail--strong">Top Level Domain: </span>85 321
+                  465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Currencies: </span>85 321 465
+                </div>
+                <div class="detail__atribute">
+                  <span class="detail--strong">Languages: </span>85 321 465
+                </div>
+              </div>
+            </div>
+
+            <!-- INFO about border countries - START -->
+            <div class="detail__border">
+              <div class="detail__border-title">Border Countries:</div>
+              <div class="detail__border-links">
+                <div class="detail__border-link">France</div>
+                <div class="detail__border-link">Germany</div>
+                <div class="detail__border-link">Netherlands</div>
+                <div class="detail__border-link">France</div>
+                <div class="detail__border-link">Germany asdfasdf dfd</div>
+                <div class="detail__border-link">Netherlands</div>
+              </div>
+            </div>
+            <!-- INFO about border countries - END -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Vita Klejch</a>.
+    </div>
+    <script src="script.js" type="module"></script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>
